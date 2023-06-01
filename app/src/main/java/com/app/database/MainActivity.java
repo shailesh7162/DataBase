@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity
                 String contact = editcontacts.getText().toString();
 
                 DBHelper dbHelper = new DBHelper(MainActivity.this);
-                dbHelper.insertData(name, contact);
-
+               // dbHelper.insertData(name, contact);
+              //  dbHelper.updateData(2,name,contact);
+                dbHelper.deleteData(4);
             }
         });
     }
