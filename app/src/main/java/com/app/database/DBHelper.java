@@ -28,23 +28,33 @@ public class DBHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void addContact(String name,String number)
+    public void addContact(String name, String number)
     {
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        String query="insert into Contact(name,number) values ('"+name+"','"+number+"')";
+        String query="insert into Contact (name,number) values('"+name+"','"+number+"')";
         sqLiteDatabase.execSQL(query);
     }
 
-    public void updateContact(Integer id, String name, String number) {
+
+    public void updateContact(int id, String name, String number) {
+
         SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-        String query="update Contact set name='"+name+"','"+number+"'where id='"+id+"'";
+        String query="update Contact set name = '"+name+"',number='"+number+"' where id = '"+id+"'";
         sqLiteDatabase.execSQL(query);
     }
 
-    public Cursor showContact() {
-        SQLiteDatabase sqLiteDatabase=getReadableDatabase();
+    public void deleteContact(int id)
+    {
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+        String query="delete from Contact where id = '"+id+"'";
+        sqLiteDatabase.execSQL(query);
+    }
+
+    public Cursor showContact()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         String query="select * from Contact";
-        Cursor cursor=sqLiteDatabase.rawQuery(query,null);
+        Cursor cursor = sqLiteDatabase.rawQuery(query,null);
         return cursor;
     }
 }

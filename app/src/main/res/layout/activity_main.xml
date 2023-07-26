@@ -12,26 +12,18 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_margin="@dimen/_10sdp"
-       android:id="@+id/editname"/>
+       android:id="@+id/editname"
+       android:hint="Name"/>
    <EditText
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_margin="@dimen/_10sdp"
-       android:id="@+id/editcontacts"/>
+       android:id="@+id/editnumber"
+       android:hint="Number"/>
    <Button
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="Add"
        android:id="@+id/btnadd"/>
-   <Button
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="update"
-       android:id="@+id/btnupdate"/>
-   <Button
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="delet"
-       android:id="@+id/btndelet"/>
 
 </LinearLayout>
